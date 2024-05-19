@@ -19,4 +19,11 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
     async def receive(self, text_data):
         # Handle incoming WebSocket messages
-        pass
+        text_data_json = json.loads(text_data)
+        print("hello")
+        message_type = text_data_json.get('type')
+        print(message_type)
+        if message_type == 'code_change':
+            code = text_data_json.get('code')
+            print(f'Message received: {code}')
+        
