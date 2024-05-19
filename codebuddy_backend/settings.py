@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+        'daphne',
+        'channels',
+
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -39,6 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'corsheaders',
     'codebuddy_app_baackend',
+
+
 ]
 
 MIDDLEWARE = [
@@ -133,3 +139,5 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
+ASGI_APPLICATION = "codebuddy_backend.asgi.application"
