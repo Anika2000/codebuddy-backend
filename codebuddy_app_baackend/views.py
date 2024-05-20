@@ -1,4 +1,3 @@
-# Create your views here.
 # views.py
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -52,7 +51,7 @@ def run_code(request):
             if language == 'python':
                 result = subprocess.run(['python', '-c', code], capture_output=True, text=True, timeout=10)
                 return JsonResponse({'output': result.stdout + result.stderr})
-            # Add other languages here
+            
             elif language == 'javascript':
                 result = subprocess.run(['node', '-e', code], capture_output=True, text=True, timeout=10)
                 return JsonResponse({'output': result.stdout + result.stderr})
